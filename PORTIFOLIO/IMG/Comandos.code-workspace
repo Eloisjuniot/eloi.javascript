@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../Comandos"
+		},
+		{
+			"path": "../../../Projetos"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Comandos"
+	}
+}

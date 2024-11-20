@@ -1,0 +1,28 @@
+import express from 'express';
+
+const app = express();
+app.use(express.json());
+
+const users = [];
+
+// Rota POST para adicionar um usuário
+app.post('/usuarios', (req, res) => {
+    // Definindo a variável newUser com os dados enviados pelo cliente
+    const newUser = req.body;
+    
+    // Adicionando o novo usuário ao array 'users'
+    users.push(newUser);
+
+    // Responder com uma mensagem de sucesso e o usuário adicionado
+    res.status(201).json({ message: 'Usuário adicionado com sucesso', user: newUser });
+});
+
+// Rota GET para listar todos os usuários
+app.get('/usuarios', (req, res) => {
+    res.json(users); // Usar res.json() para retornar um objeto JSON
+});
+
+// Inicia o servidor na porta 3000
+app.listen(3000, () => {
+    console.log('Servidor rodando na porta 3000');
+});
